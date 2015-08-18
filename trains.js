@@ -27,12 +27,18 @@ sixline.addEventListener("click", function(){
 
 var stations = ["N Times Square", "Union Square", "N 34th", "N 28th", "N 23rd", "N 8th", "L 8th", "L 6th", "L 3rd", "L 1st", "6 AstoR Place", "6 28th", "6 23rd", "6 33rd", "Grand Central"]
 
+var startStation = document.getElementsByClassName("startStations")
 var stationSelect = document.getElementsByClassName("stations") 
 
-var stations = ["N Times Square", "Union Square", "N 34th", "N 28th", "N 23rd", "N 8th", "L 8th", "L 6th", "L 3rd", "L 1st", "6 AstoR Place", "6 28th", "6 23rd", "6 33rd", "Grand Central"]
 
+//this one adds clicks to the destination
 for (var i = 0; i < stations.length; i++){
-    var stationStart = stationSelect[i];
+    var stationFinish = stationSelect[i];
+    stationFinish.addEventListener("click", blindClick(i));
+    }
+//this one adds clicks to the starting station
+for (var i = 0; i < stations.length; i++){
+    var stationStart = startStation[i];
     stationStart.addEventListener("click", blindClick(i));
     }
 
@@ -41,6 +47,8 @@ for (var i = 0; i < stations.length; i++){
         console.log("you selected " + stations[i])
       }
     };
+
+
 
 
 
